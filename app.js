@@ -1,32 +1,18 @@
 const express = require("express");
 const app = express();
-const http = require("http");
-const url = require("url");
+const path = require("path");
 
-app.get("/random-url", (req, res) => {
-  // Define the external URL to redirect to
-  const externalURL =
-    "https://www.pump.fun/4inoptdokTnnH5cU64CP64WQbeV6gdFUVmiokPfwzbsL";
+app.use(express.static(path.join(__dirname, "public")));
 
-  // Proxy the request to the external URL
-  const options = {
-    hostname: url.parse(externalURL).hostname,
-    path: url.parse(externalURL).pathname,
-    method: "GET",
-  };
+app.get("/redirect", (req, res) => {
+  // Send the HTML file that performs the redirection
+  res.sendFile(path.join(__dirname, "redirect.html"));
+});
 
-  const externalRequest = http.request(options, (externalResponse) => {
-    // Pass the external server's response back to the client
-    res.writeHead(externalResponse.statusCode, externalResponse.headers);
-    externalResponse.pipe(res);
-  });
-
-  externalRequest.on("error", (err) => {
-    console.error(err);
-    res.status(500).send("Internal Server Error");
-  });
-
-  externalRequest.end();
+// This route will serve as the URL you want to display
+app.get("/desired-url", (req, res) => {
+  // You can simply render a template or send any response you want
+  res.send("This is the content you want to display for the desired URL.");
 });
 
 // Start the server
