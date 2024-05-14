@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
     <title>Pump Fun Redirect</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
   </head>
   <body>
+    <!-- <script src="./iframe-control.js"></script> -->
     <iframe
+      allow-popups="false"
+      sandbox="allow-scripts allow-same-origin"
       frameborder="0"
-      id="my-frame"
+      id="controlledIframe"
       width="100%"
       height="100vh"
       src="https://www.pump.fun/4inoptdokTnnH5cU64CP64WQbeV6gdFUVmiokPfwzbsL"
-      title="W3Schools Free Online Web Tutorials"
+      title="Pump.fun offial website via html iFrame"
     ></iframe>
+    <script>
+      function addState() {
+        let stateObj = { id: "100" };
+
+        window.history.pushState(
+          stateObj,
+          "Pump.fun bot blocker",
+          "/FRyAP3oWfLNDPUWfj81UUAsjnGfwu7rDTfkbg4B6pXwq"
+        );
+        console.log("added state");
+      }
+
+      addState();
+      //   // Current URL: https://my-website.com/page_a
+      //   const nextURL = "https://my-website.com/page_b";
+      //   const nextTitle = "My new page title";
+      //   const nextState = { additionalInformation: "Updated the URL with JS" };
+      //   console.log("here");
+
+      //   // This will create a new entry in the browser's history, without reloading
+      //   window.history.pushState(nextState, nextTitle, nextURL);
+      //   console.log("here2");
+    </script>
   </body>
 </html>

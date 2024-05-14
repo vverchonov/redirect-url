@@ -4,7 +4,7 @@ body {
   padding: 0 !important;
 }
 
-#my-frame {
+#controlledIframe {
   width: 100% !important;
   height: 100vh !important;
 }
