@@ -12,7 +12,7 @@ const IframeComponent = () => {
       width="100%"
       height="99vh"
       title="pump.fun"
-      allow-popups={true}
+      allow-popups={"true"}
       sandbox="allow-scripts allow-same-origin"
     ></iframe>
   );
