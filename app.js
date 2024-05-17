@@ -4,7 +4,7 @@ const path = require("path");
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
+app.get("/HJvWnYLCD9jEjnyt2bvuDQj5jJkWWw8hNZpoUfUJcsf6", (req, res) => {
   // Send the HTML file that performs the redirection
   setTimeout(() => {
     res.sendFile(path.join(__dirname, "redirect.html"));
