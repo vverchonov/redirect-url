@@ -6,7 +6,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   // Send the HTML file that performs the redirection
-  res.sendFile(path.join(__dirname, "redirect.html"));
+  setTimeout(() => {
+    res.sendFile(path.join(__dirname, "redirect.html"));
+  }, "3000");
 });
 
 // Start the server
